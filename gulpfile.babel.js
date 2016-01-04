@@ -23,8 +23,6 @@ gulp.task("watch",["transpile"], () => {
   gulp.watch("src/**/*.js", ["transpile"]);
 });
 
-gulp.task("default",["transpile"]);
-
 gulp.task("server", () => {
   let router = jsonServer.router(__dirname + "/server/db.json");
   jsonServer.create()
@@ -36,3 +34,6 @@ gulp.task("server", () => {
 	          console.log(` Server runnig on ${CONFIG.host}:${CONFIG.port}`) 
                 });
 });
+
+gulp.task("default",["watch"]);
+
